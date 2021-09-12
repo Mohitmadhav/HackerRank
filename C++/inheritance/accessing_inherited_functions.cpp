@@ -1,4 +1,3 @@
-//2/11 cases passed
 //Problem Statement: https://www.hackerrank.com/challenges/accessing-inherited-functions/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
 
 #include <iostream>
@@ -105,17 +104,57 @@ public:
     }
 
     //Implement this function
+
     void update_val(int new_val)
     {
-        //  val=new_val;
+        int x = new_val;
 
-        while (val != new_val)
+        while (x % 2 == 0)
         {
+            x = x / 2;
             A::func(val);
+        }
+
+        while (x % 3 == 0)
+        {
+            x = x / 3;
             B::func(val);
+        }
+
+        while (x % 5 == 0)
+        {
+            x = x / 5;
             C::func(val);
         }
     }
+
+    //2 out of 11 test cases passed
+    // void update_val(int new_val)
+    // {
+    //     //  val=new_val;
+
+    //     while (val != new_val)
+    //     {
+    //         A::func(val);
+    //         B::func(val);
+    //         C::func(val);
+    //     }
+    // }
+
+    // 6 out of 11 passed for below function
+    // void update_val(int new_val)
+    // 	 {
+    //         //  val=new_val;
+
+    //         while(val!=new_val){
+    //             if(new_val%2==0) A::func(val);
+    //               if(new_val%3==0)  B::func(val);
+    //            if(new_val%5==0) C::func(val);
+
+    //         }
+
+    // 	 }
+
     //For Checking Purpose
     void check(int); //Do not delete this line.
 };
